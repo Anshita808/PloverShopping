@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@800&family=Rowdies:wght@300&family=Satisfy&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding: 20px;
+    background-color: #FAFAFA;
+}
+.nav i{
+    margin-right: 8px;
+    font-size: 20px;
+    color: #00897B;
+    cursor: pointer;
+}
+.nav>div{
+    display: flex;
+}
+.nav h3{
+    color: #00897B;
+    font-weight: 100;
+}
+.nav>div:nth-child(1){
+    padding: 30px;
+   
+}
+.nav>div:nth-child(2)>i{
+    color: #00695C;
+    width: 15%;
+    padding: 10px;
+    margin-right: 25px;
+}
+.nav>div:nth-child(2)>i:hover{
+    background-color: #78909C;
+    color: white;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    background-color: #80CBC4;
+    padding: 2px 0px 2px 0px;
+}
+.logo>div{
+    display: flex;
+  
+}
+.logo>div>i{
+    font-size: 38px;
+    margin-left:20px;
+    margin-right: 10px;
+    color: whitesmoke;
+}
+.logo>div>h1{
+    font-family: 'Anton', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Rowdies', cursive;
+    font-family: 'Satisfy', cursive;
+    color: whitesmoke;
+    margin-right: 120px;
+}
+.logo>h4{
+    margin-right: 18px;
+   color: whitesmoke;
+   font-weight: 200;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   cursor: pointer;
+}
+.mid{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.mid>div{
+    display: flex;
+    border: 1px solid red;
+}
