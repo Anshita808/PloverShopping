@@ -7,6 +7,9 @@
     box-sizing: border-box;
    
 }
+body{
+    scroll-behavior: smooth;
+}
 .nav{
     display: flex;
     justify-content: space-between;
@@ -20,6 +23,15 @@
     font-size: 20px;
     color: #42A5F5;
     cursor: pointer;
+}
+.nav a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.nav a>i{
+    color:#42A5F5;
 }
 .nav>div{
     display: flex;
@@ -469,7 +481,7 @@ font-family: 'Poppins', sans-serif;
 #main-about>div{
  margin: auto;
  line-height: 30px;
- 
+ padding-bottom: 30px;
 }
 #main-about>div>a{
     text-align: start;
