@@ -12,7 +12,7 @@ fetch(api).then((request) => {
 
 
 
-
+let cart = JSON.parse(localStorage.getItem("cart"))||[];
 function Display(data) {
 
     product.innerHTML = "";
@@ -30,8 +30,25 @@ function Display(data) {
         title.innerText = element.title
         let add_to_cart = document.createElement("button");
             add_to_cart.innerText = "Add to cart"
-          
+          add_to_cart.addEventListener("click",()=>{
+            if(checkDuplicate(element)){
+                alert("product is already added");
+            }else{
+                cart.push({...element,quantity:1});
+              localStorage.setItem("cart",JSON.stringify(cart));
+              alert("product added to cart")
+            }
+          })
+
+
         product.append(div)
         div.append(img, title,category,price,add_to_cart);
     })
+}
+function checkDuplicate(product){
+       for(let i=0; i<cart.length; i++){
+        if(cart[i].id === product.id){
+            return true;
+        }
+       }return false;
 }
