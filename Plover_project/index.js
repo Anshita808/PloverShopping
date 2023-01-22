@@ -1,23 +1,50 @@
 let product = document.querySelector(".product");
-
+let fetchData = [];
 let api = "https://fakestoreapi.com/products ";
 fetch(api).then((request) => {
     return request.json();
 }).then((res) => {
-    console.log(res);
-    Display(res)
+   fetchData = res
+    Display(fetchData)
+    console.log(fetchData);
 }).catch((err) => {
     console.log(err);
 })
 
-
+let searchEl = document.getElementById("search");
+let searchInp = document.getElementById("search-fun");
+let search_btn = document.getElementById("search-btn");
+// search_btn.addEventListener("click",()=>{
+//     let searchpara = searchInp.value;
+//      let filtered = fetchData.filter((element,index)=>{
+//         if(element.category.toUpperCase().includes(searchpara.toUpperCase())==true){
+//             return true
+//         }else{
+//             return false
+//         }
+//      })
+//      Display(filtered);
+// })
+search_btn.addEventListener("click", () => {
+    let searchParams = searchInp.value;
+    let filtered = fetchData.filter((ele, i) => {
+      if (
+        ele.category.toUpperCase().includes(searchParams.toUpperCase()) === true
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    Display(filtered);
+  });
 
 let cart = JSON.parse(localStorage.getItem("cart"))||[];
 function Display(data) {
 
     product.innerHTML = "";
     data.forEach((element, index) => {
-      
+    
         let div = document.createElement("div");
         div.setAttribute("class","mycard")
         let img = document.createElement("img");
